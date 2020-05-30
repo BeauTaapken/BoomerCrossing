@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BeauScene.unity
+    guid: 1a14f0b6178c1d148a38b7eea142a151
   m_configObjects: {}
