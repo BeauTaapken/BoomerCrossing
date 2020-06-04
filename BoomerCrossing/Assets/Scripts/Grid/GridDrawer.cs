@@ -5,11 +5,12 @@ using UnityEngine;
 public class GridDrawer : MonoBehaviour
 {
     public Grid grid;
+    public GameObject gridObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        grid.GenerateGrid();
+        grid.GenerateGrid(gridObject);
     }
 
     // Update is called once per frame

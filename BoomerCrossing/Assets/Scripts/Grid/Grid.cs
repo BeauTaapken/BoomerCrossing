@@ -12,7 +12,7 @@ public class Grid : ScriptableObject
     public int GridSizeY;
     public int GridSizeX;
 
-    public float Curve;
+    public float Radius;
 
     public float ColSizeX;
     public float RowSizeY;
@@ -22,15 +22,44 @@ public class Grid : ScriptableObject
 
     public List<GridRow> rows = new List<GridRow>();
 
-    public void GenerateGrid()
-    {
-        Vector2 generateColFromPoint = new Vector2(OffsetX, OffsetY);
+    public List<Vector3> GridPoints = new List<Vector3>();
 
-        for(int y = 0; y < GridSizeY; y++)
+    void CreatePoints(GameObject gridObject)
+    {
+        float x = 0f;
+        float y = 0f;
+
+        float angle = 0f;
+        for (float z = 0; z < (GridSizeX); z++)
+        {
+            for (int i = 0; i < (GridSizeY + 1); i++)
+            {
+                x = Mathf.Sin(Mathf.Deg2Rad * angle) * Radius;
+                y = Mathf.Cos(Mathf.Deg2Rad * angle) * Radius;
+
+                GridPoints.Add(new Vector3(x, y, (z * ColSizeX)));
+                GameObject s1 = Instantiate(redSphere, gridObject.transform);
+                s1.transform.position = new Vector3(x, (y + OffsetY), ((z * ColSizeX) + OffsetX));
+
+                angle += (360f / GridSizeY);
+            }
+        }
+       
+    }
+
+    public void GenerateGrid(GameObject gridObject)
+    {
+        CreatePoints(gridObject);
+        Vector2 generateColFromPoint = new Vector2(OffsetX, OffsetY);
+        float angle = 0f;
+
+        for (int y = 0; y < GridSizeY; y++)
         {
             GridRow row = new GridRow();
 
-            for(int x = 0; x < GridSizeX; x++)
+            generateColFromPoint = new Vector2(generateColFromPoint.x + Mathf.Sin(Mathf.Deg2Rad * angle) * Radius, generateColFromPoint.y + Mathf.Cos(Mathf.Deg2Rad * angle) * Radius);
+
+            for (int x = 0; x < GridSizeX; x++)
             {
                 Vector2 leftTopPoint = generateColFromPoint;
                 Vector2 rightTopPoint = new Vector2(generateColFromPoint.x + ColSizeX, generateColFromPoint.y);
@@ -45,11 +74,11 @@ public class Grid : ScriptableObject
             }
 
             generateColFromPoint = row.cols[0].LeftBottomPoint;
-
+            angle += (360f / RowSizeY);
             rows.Add(row);         
         }
 
-        DebugGrid();
+        //DebugGrid();
     }
 
     private void DebugGrid()
