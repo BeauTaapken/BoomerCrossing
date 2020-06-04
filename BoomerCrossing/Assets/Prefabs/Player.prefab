@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5529446033806216127}
   - component: {fileID: 5529446033806216124}
-  - component: {fileID: 5529446033806216125}
   - component: {fileID: 5529446033806216112}
   - component: {fileID: 4034170967976656053}
   m_Layer: 0
@@ -49,20 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParentPlanet: {fileID: 0}
   speed: 12
---- !u!136 &5529446033806216125
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5529446033806216114}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5529446033806216112
 Rigidbody:
   m_ObjectHideFlags: 0
