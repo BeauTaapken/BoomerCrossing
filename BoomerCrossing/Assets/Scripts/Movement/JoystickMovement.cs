@@ -4,80 +4,51 @@ using UnityEngine;
 
 public class JoystickMovement : MonoBehaviour
 {
+    public float speed = 12f;
+    public float gravity = 9.8f;
+
     public GameObject ParentPlanet;
 
-    public float speed = 12f;
-
     protected Joystick Joystick;
+
+    private CharacterController characterController;
     
     private HittingSide hittingSide = HittingSide.None;
 
     private Vector3 oldPlayerLocation;
 
+    private float vSpeed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         Joystick = FindObjectOfType<Joystick>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float x = Joystick.Horizontal;
         float z = Joystick.Vertical;
 
         transform.position += new Vector3(x * speed , 0, 0) * Time.deltaTime;
 
-        switch (hittingSide)
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        if (characterController.isGrounded)
         {
-            case (HittingSide.None):
-
-                ParentPlanet.transform.Rotate(new Vector3(-z, 0, 0) * speed * Time.deltaTime);
-                break;
-
-            case (HittingSide.Back):
-                
-                if (-z < 0)
-                {
-                    ParentPlanet.transform.Rotate(new Vector3(-z, 0, 0) * speed * Time.deltaTime);
-                }
-                break;
-
-            case (HittingSide.Front):
-
-                if (-z > 0)
-                {
-                    ParentPlanet.transform.Rotate(new Vector3(-z, 0, 0) * speed * Time.deltaTime);
-                }
-                break;
-
-            default:
-                Debug.Log("Missing a check");
-                break;
+            vSpeed = 0;
+            //If jumping will be added, add here with an if statement on getaxis
         }
-    }
 
-    void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.name != "Planet")
-        {
-            float angle = Vector3.Angle(collision.contacts[0].normal, Vector3.forward);
-            if (angle <= 15)
-            {
-                hittingSide = HittingSide.Back;
-            }
-            else if (angle >= 160 && angle <= 180)
-            {
-                hittingSide = HittingSide.Front;
-            }
-        }
-    }
+        vSpeed -= gravity;
+        move.y = vSpeed;
+        characterController.Move(move * speed * Time.deltaTime);
 
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.name != "Planet")
+        if (Input.GetKeyDown("escape"))
         {
-            hittingSide = HittingSide.None;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
