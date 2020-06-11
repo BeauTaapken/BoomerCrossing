@@ -10,6 +10,7 @@ public class JoystickMovement : MonoBehaviour
     protected Joystick Joystick;
 
     private CharacterController characterController;
+    public Animator animator;
 
     private Vector3 oldPlayerLocation;
 
@@ -25,8 +26,30 @@ public class JoystickMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int Direct = 0;
         float x = Joystick.Horizontal;
         float z = Joystick.Vertical;
+        animator.SetFloat("X",x);
+        animator.SetFloat("Z",z);
+
+        if(x > 0.01f && x > Mathf.Abs(z))
+        {
+            Direct = 2;
+        }
+        else if(x < -0.01f && x > Mathf.Abs(z))
+        {
+            Direct = 4;
+        }
+        else if(z < -0.01f )
+        {
+            Direct = 1;
+        }
+        else if(z < -0.01f )
+        {
+            Direct = 3;
+        }
+        animator.SetInteger("Direct",Direct);
+
 
         transform.position += new Vector3(x * speed , 0, 0) * Time.deltaTime;
 
