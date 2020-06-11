@@ -48,6 +48,10 @@ public class JoystickMovement : MonoBehaviour
         {
             Direct = 3;
         }
+        else
+        {
+            Direct = 0;
+        }
         animator.SetInteger("Direct",Direct);
 
 
