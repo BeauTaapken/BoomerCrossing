@@ -27,8 +27,7 @@ public class Grid : ScriptableObject
         GenerateFlatGrid();
     }
 
-
-    GridCol getColByVector3(Vector3 position)
+    public GridCol getColByVector3(Vector3 position)
     {
         GridCol restultCol = null;
 
@@ -38,7 +37,8 @@ public class Grid : ScriptableObject
             {
                 if(position.x >= col.LeftTopPoint.x && position.x <= col.RightTopPoint.x)
                 {
-                    if(position.y <= col.LeftTopPoint.y && position.y >= col.LeftBottomPoint.y)
+                    //Watch out with changing Y/Z (vector2,vector3);
+                    if(position.z <= col.LeftTopPoint.y && position.z >= col.LeftBottomPoint.y)
                     {
                         restultCol = col;
                         break;
@@ -49,7 +49,6 @@ public class Grid : ScriptableObject
 
         return restultCol;
     }
-
 
     void GenerateFlatGrid()
     {
@@ -107,12 +106,69 @@ public class Grid : ScriptableObject
                 s3.transform.position = new Vector3(col.LeftBottomPoint.x, 0, col.LeftBottomPoint.y);
                 s4.transform.position = new Vector3(col.RightBottomPoint.x, 0, col.RightBottomPoint.y);
 
-                s5.transform.position = new Vector3(col.centerPoint.x, 0, col.centerPoint.y);
+                s5.transform.position = col.centerPoint;
             }
         }
 
         Debug.Log("Cols:" + colcount);
     }
+
+    //public GridCol getGridColByGridObjectTag(string tag, Vector3 position)
+    //{
+    //    GridCol restultCol = null;
+
+    //    GridCol positionCol = getColByVector3(position);
+
+    //    if(positionCol != null)
+    //    {
+    //        if (positionCol.objectInCol != null)
+    //        {
+    //            if (positionCol.objectInCol.tag == tag)
+    //            {
+    //                restultCol = positionCol;
+    //                return restultCol;
+    //            }
+    //        }
+
+    //        int x = 0;
+    //        int y = 0;
+
+    //        bool found = false;
+
+    //        foreach(GridRow row in rows)
+    //        {
+    //            if(!found)
+    //            {
+    //                x = 0;
+    //                foreach (GridCol col in row.cols)
+    //                {
+    //                    if (col == positionCol)
+    //                    {
+    //                        found = true;
+    //                    }
+
+    //                    if (!found)
+    //                    {
+    //                        x++;
+    //                    }                    
+    //                }
+
+    //                if (!found)
+    //                {
+    //                    y++;
+    //                }
+    //            }
+    //        }
+
+    //        Debug.Log("col position: x: " + x + " Y: " + y);
+
+    //        GridCol test = rows[y].cols[x];
+    //        Debug.Log(test == positionCol);
+    //    }
+
+
+    //    return restultCol;
+    //}
 
     #region cilinder
 
