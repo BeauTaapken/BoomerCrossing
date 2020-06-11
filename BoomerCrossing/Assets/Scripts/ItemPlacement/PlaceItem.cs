@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class PlaceItem : MonoBehaviour
 {
-    public GameObject planetParts;
     public GameObject player;
 
     public Grid worldGrid;
 
     public void PlaceItemOnGrid(GameObject itemToPlace)
     {
-        if (worldGrid.getColByVector3(player.transform.position) != null)
+        GridCol gridLocation = worldGrid.getColByVector3(player.transform.position);
+
+        Debug.Log(gridLocation.objectInCol);
+
+        if (gridLocation.objectInCol == null)
         {
-            //worldGrid.getColByVector3(player.transform.position) = ;
+            
+            GameObject placedItem = Instantiate(itemToPlace, new Vector3(gridLocation.centerPoint.x, 0.0f, gridLocation.centerPoint.y), Quaternion.identity);
+            //placedItem.transform.parent = planetParts.transform;
+            worldGrid.getColByVector3(player.transform.position).objectInCol = placedItem;
         }
-        
-        GameObject placedItem = Instantiate(itemToPlace, new Vector3(player.transform.position.x, 26.0f, 0.0f), Quaternion.identity);
-        placedItem.transform.parent = planetParts.transform;
+        else
+        {
+            Debug.Log("already contains item");
+        }
     }
 }
