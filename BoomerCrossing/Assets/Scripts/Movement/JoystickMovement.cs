@@ -40,7 +40,7 @@ public class JoystickMovement : MonoBehaviour
         {
             Direct = 4;
         }
-        else if(z < -0.01f )
+        else if(z > 0.01f )
         {
             Direct = 1;
         }
