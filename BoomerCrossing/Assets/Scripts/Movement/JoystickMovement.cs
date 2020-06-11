@@ -7,13 +7,9 @@ public class JoystickMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = 9.8f;
 
-    public GameObject ParentPlanet;
-
     protected Joystick Joystick;
 
     private CharacterController characterController;
-    
-    private HittingSide hittingSide = HittingSide.None;
 
     private Vector3 oldPlayerLocation;
 
