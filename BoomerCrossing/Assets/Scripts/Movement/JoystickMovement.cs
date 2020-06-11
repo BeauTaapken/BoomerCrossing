@@ -36,7 +36,7 @@ public class JoystickMovement : MonoBehaviour
         {
             Direct = 2;
         }
-        else if(x < -0.01f && x > Mathf.Abs(z))
+        else if(x < -0.01f && Mathf.Abs(x) > Mathf.Abs(z))
         {
             Direct = 4;
         }
