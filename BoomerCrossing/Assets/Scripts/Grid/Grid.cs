@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu]
@@ -11,6 +12,11 @@ public class Grid : ScriptableObject
 
     public int GridSizeY;
     public int GridSizeX;
+
+    internal void GenerateGrid(object gridObject, LineRenderer lineRenderer)
+    {
+        throw new NotImplementedException();
+    }
 
     //public float Radius;
 
@@ -78,7 +84,7 @@ public class Grid : ScriptableObject
             rows.Add(row);
         }
 
-        DebugGrid(); 
+        //DebugGrid(); 
     }
 
     private void DebugGrid()

@@ -8,6 +8,8 @@ public class PlaceItem : MonoBehaviour
 
     public Grid worldGrid;
 
+    public GameObject planetParts;
+
     public void PlaceItemOnGrid(GameObject itemToPlace)
     {
         GridCol gridLocation = worldGrid.getColByVector3(player.transform.position);
@@ -16,14 +18,8 @@ public class PlaceItem : MonoBehaviour
 
         if (gridLocation.objectInCol == null)
         {
-            
-            GameObject placedItem = Instantiate(itemToPlace, new Vector3(gridLocation.centerPoint.x, 0.0f, gridLocation.centerPoint.y), Quaternion.identity);
-            //placedItem.transform.parent = planetParts.transform;
+            GameObject placedItem = Instantiate(itemToPlace, gridLocation.centerPoint, Quaternion.identity, planetParts.transform);
             worldGrid.getColByVector3(player.transform.position).objectInCol = placedItem;
-        }
-        else
-        {
-            Debug.Log("already contains item");
         }
     }
 }
