@@ -337,6 +337,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5529446034799406998}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &790168933
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790168932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.2307692
+  m_Radius: 0.5769231
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &925321099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8129550388837737419, guid: c3bdc03be98eea64e97df262bbfd567d,
@@ -581,6 +599,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8129550389312627687, guid: c3bdc03be98eea64e97df262bbfd567d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129550389605633687, guid: c3bdc03be98eea64e97df262bbfd567d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bdc03be98eea64e97df262bbfd567d, type: 3}
 --- !u!1001 &8384474220347836698
@@ -736,5 +764,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8764768196560711819, guid: eab5820e7f898814490b1f576da3cc6c,
         type: 3}
+    - target: {fileID: 8384474220477014709, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.5271
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384474220477014709, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -13.5271
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f, type: 3}

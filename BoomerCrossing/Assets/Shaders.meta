@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c151c97fca790ae4086a70e421a92c76
+=======
+guid: 24727e7e63cafb14ea2819decaf10713
+>>>>>>> feature/place_item_on_grid
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
