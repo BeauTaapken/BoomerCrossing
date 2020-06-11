@@ -10,7 +10,7 @@ public class GridDrawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grid.GenerateGrid(gridObject);
+        grid.GenerateGrid(gridObject, gameObject.GetComponent<LineRenderer>());
     }
 
     // Update is called once per frame

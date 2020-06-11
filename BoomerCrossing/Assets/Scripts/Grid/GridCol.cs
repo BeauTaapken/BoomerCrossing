@@ -6,10 +6,10 @@ public class GridCol
 {
     public Vector2 centerPoint;
 
-    public Vector2 LeftTopPoint;
-    public Vector2 RightTopPoint;
-    public Vector2 LeftBottomPoint;
-    public Vector2 RightBottomPoint;
+    public Vector3 LeftTopPoint;
+    public Vector3 RightTopPoint;
+    public Vector3 LeftBottomPoint;
+    public Vector3 RightBottomPoint;
 
     public GameObject objectInCol;
 
@@ -19,7 +19,7 @@ public class GridCol
 
     public GridCol(Vector3 leftTopPoint, Vector3 rightTopPoint, Vector3 leftBottomPoint, Vector3 rightBottomPoint, float sizeX, float sizeY)
     {
-        centerPoint = new Vector2(leftTopPoint.x + sizeX/2, leftTopPoint.y - sizeY/2);
+        centerPoint = new Vector3(leftTopPoint.x + sizeX/2, leftTopPoint.y - sizeY/2, 0);
         LeftTopPoint = leftTopPoint;
         RightTopPoint = rightTopPoint;
         LeftBottomPoint = leftBottomPoint;
