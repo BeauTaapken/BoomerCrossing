@@ -28,7 +28,7 @@ public class Grid : ScriptableObject
     }
 
 
-    GridCol getColByVector3(Vector3 position)
+    public GridCol getColByVector3(Vector3 position)
     {
         GridCol restultCol = null;
 
@@ -79,7 +79,7 @@ public class Grid : ScriptableObject
             rows.Add(row);
         }
 
-        DebugGrid(); 
+        //DebugGrid(); 
     }
 
     private void DebugGrid()

@@ -11,7 +11,11 @@ public class PlaceItem : MonoBehaviour
 
     public void PlaceItemOnGrid(GameObject itemToPlace)
     {
-
+        if (worldGrid.getColByVector3(player.transform.position) != null)
+        {
+            //worldGrid.getColByVector3(player.transform.position) = ;
+        }
+        
         GameObject placedItem = Instantiate(itemToPlace, new Vector3(player.transform.position.x, 26.0f, 0.0f), Quaternion.identity);
         placedItem.transform.parent = planetParts.transform;
     }

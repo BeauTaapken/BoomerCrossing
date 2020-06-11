@@ -888,6 +888,7 @@ GameObject:
   - component: {fileID: 8384474219474000522}
   - component: {fileID: 8384474219474000533}
   - component: {fileID: 8384474219474000532}
+  - component: {fileID: 6241814263177153518}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -975,6 +976,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6241814263177153518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384474219474000535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b08d1615ea91624e9a5296a7c3fadf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetParts: {fileID: 0}
+  player: {fileID: 0}
+  worldGrid: {fileID: 11400000, guid: c5bcd5f3c88ceac499a0dcd545776b7d, type: 2}
 --- !u!1 &8384474219632246897
 GameObject:
   m_ObjectHideFlags: 0
