@@ -84,7 +84,7 @@ public class Grid : ScriptableObject
             rows.Add(row);
         }
 
-        //DebugGrid(); 
+        DebugGrid(); 
     }
 
     private void DebugGrid()
