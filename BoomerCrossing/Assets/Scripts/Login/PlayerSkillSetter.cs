@@ -10,11 +10,13 @@ public class PlayerSkillSetter : MonoBehaviour
 
     public void SetPlayerSKillToNew()
     {
+        playerList.CurrentLoggedInPlayer.Skill = PlayerSkill.NEW;
         selector.MainMenu();
     }
 
     public void SetPlayerSKillToExperienced()
     {
+        playerList.CurrentLoggedInPlayer.Skill = PlayerSkill.EXPERIENCED;
         selector.MainMenu();
     }
 

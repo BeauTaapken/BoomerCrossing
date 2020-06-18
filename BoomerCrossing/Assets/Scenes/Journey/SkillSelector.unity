@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 51646467}
   - component: {fileID: 51646466}
   - component: {fileID: 51646465}
-  - component: {fileID: 51646464}
   m_Layer: 5
   m_Name: New button
   m_TagString: Untagged
@@ -317,20 +316,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &51646464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51646462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f565b8b9effb19a4486c71225638f576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerList: {fileID: 11400000, guid: 955cc21bc92640e43a71d262d6fba34a, type: 2}
-  selector: {fileID: 697518470}
 --- !u!114 &51646465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 51646464}
+      - m_Target: {fileID: 1055745361}
         m_MethodName: SetPlayerSKillToNew
         m_Mode: 1
         m_Arguments:
@@ -384,7 +369,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &51646466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +419,6 @@ GameObject:
   - component: {fileID: 260080707}
   - component: {fileID: 260080706}
   - component: {fileID: 260080705}
-  - component: {fileID: 260080704}
   m_Layer: 5
   m_Name: Experienced button
   m_TagString: Untagged
@@ -462,20 +446,6 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &260080704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260080702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f565b8b9effb19a4486c71225638f576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerList: {fileID: 11400000, guid: 955cc21bc92640e43a71d262d6fba34a, type: 2}
-  selector: {fileID: 697518470}
 --- !u!114 &260080705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +489,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260080704}
+      - m_Target: {fileID: 1055745361}
         m_MethodName: SetPlayerSKillToExperienced
         m_Mode: 1
         m_Arguments:
@@ -529,7 +499,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &260080706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +985,7 @@ GameObject:
   - component: {fileID: 1055745359}
   - component: {fileID: 1055745358}
   - component: {fileID: 1055745357}
+  - component: {fileID: 1055745361}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1107,6 +1078,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1055745361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055745356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f565b8b9effb19a4486c71225638f576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerList: {fileID: 11400000, guid: 955cc21bc92640e43a71d262d6fba34a, type: 2}
+  selector: {fileID: 697518470}
 --- !u!1 &1502494923
 GameObject:
   m_ObjectHideFlags: 0
