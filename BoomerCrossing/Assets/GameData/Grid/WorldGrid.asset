@@ -16,9 +16,9 @@ MonoBehaviour:
     type: 3}
   greenSphere: {fileID: 3337335895346442535, guid: 2f08afe89e422be4d8609c7b067a643e,
     type: 3}
-  GridSizeY: 40
+  GridSizeY: 32
   GridSizeX: 40
   ColSizeX: 2.5
   RowSizeY: 2.5
   OffsetX: -50
-  OffsetY: 50
+  OffsetY: 40
