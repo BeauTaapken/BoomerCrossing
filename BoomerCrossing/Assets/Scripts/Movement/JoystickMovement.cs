@@ -16,8 +16,7 @@ public class JoystickMovement : MonoBehaviour
 
     private float vSpeed = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Setup()
     {
         Joystick = FindObjectOfType<Joystick>();
         characterController = GetComponent<CharacterController>();

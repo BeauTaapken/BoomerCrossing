@@ -33,9 +33,12 @@ public class LoginManager : MonoBehaviour
     {
         string Name = userNameText.text;
 
-        if (playerList.players.Find(u=>u.Name == Name) != null)
+        Player currentPlayer = playerList.players.Find(u => u.Name == Name);
+
+        if (currentPlayer != null)
         {
-            playerList.CurrentLoggedInPlayer = player;
+            Debug.Log(currentPlayer.Skill);
+            playerList.CurrentLoggedInPlayer = currentPlayer;
             selector.MainMenu();
         }
         else

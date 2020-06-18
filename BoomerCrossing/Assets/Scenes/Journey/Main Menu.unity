@@ -356,6 +356,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &536259633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8384474219474000535, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881897323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555889350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8129550390061778952, guid: c3bdc03be98eea64e97df262bbfd567d,
@@ -368,6 +374,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1585088442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &677128805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7727060941490678624, guid: 5d2a2376ecba0a74e9656d478435093a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585088442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677128804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5fbb59593bcd8459c48db63118854d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &759080135
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +981,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1881897323}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 536259633}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b08d1615ea91624e9a5296a7c3fadf2, type: 3}
@@ -978,6 +996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1226675586}
+  - component: {fileID: 1226675587}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -999,6 +1018,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226675587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226675585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf61eb2538160943a783761a04af71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomerUI: {fileID: 5057347977768017568, guid: baa65f6b9500c9b48b9e4b90dd28d3ec,
+    type: 3}
+  ZoomerUI: {fileID: 536259633}
+  playerList: {fileID: 11400000, guid: 955cc21bc92640e43a71d262d6fba34a, type: 2}
+  JoystickMovement: {fileID: 677128805}
 --- !u!1 &1426041219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 605744344818368403, guid: c3bdc03be98eea64e97df262bbfd567d,
@@ -1290,7 +1326,12 @@ PrefabInstance:
     - target: {fileID: 8384474219474000535, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
         type: 3}
       propertyPath: m_Name
-      value: UI
+      value: ZoomerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384474219474000535, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384474220477014698, guid: daf79ac7bbb59b34bbc6fbc35dfc7f1f,
         type: 3}
