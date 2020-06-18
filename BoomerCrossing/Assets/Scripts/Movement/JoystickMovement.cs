@@ -25,52 +25,57 @@ public class JoystickMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int Direct = 0;
-        float x = Joystick.Horizontal;
-        float z = Joystick.Vertical;
-        animator.SetFloat("X",x);
-        animator.SetFloat("Z",z);
+        if (Joystick != null && characterController != null)
+        {
+            float x = Joystick.Horizontal;
+            float z = Joystick.Vertical;
 
-        if(x > 0.01f && x > Mathf.Abs(z))
-        {
-            Direct = 2;
-        }
-        else if(x < -0.01f && Mathf.Abs(x) > Mathf.Abs(z))
-        {
-            Direct = 4;
-        }
-        else if(z > 0.01f )
-        {
-            Direct = 1;
-        }
-        else if(z < -0.01f )
-        {
-            Direct = 3;
+            int direct = 0;
+
+            animator.SetFloat("X", x);
+            animator.SetFloat("Z", z);
+
+            if (x > 0.01f && x > Mathf.Abs(z))
+            {
+                direct = 2;
+            }
+            else if (x < -0.01f && Mathf.Abs(x) > Mathf.Abs(z))
+            {
+                direct = 4;
+            }
+            else if (z > 0.01f)
+            {
+                direct = 1;
+            }
+            else if (z < -0.01f)
+            {
+                direct = 3;
+            }
+            animator.SetInteger("Direct", direct);
+
+
+            transform.position += new Vector3(x * speed, 0, 0) * Time.deltaTime;
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            if (characterController.isGrounded)
+            {
+                vSpeed = 0;
+                //If jumping will be added, add here with an if statement on getaxis
+            }
+
+            vSpeed -= gravity;
+            move.y = vSpeed;
+            characterController.Move(move * speed * Time.deltaTime);
+
+            if (Input.GetKeyDown("escape"))
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
         else
         {
-            Direct = 0;
-        }
-        animator.SetInteger("Direct",Direct);
-
-
-        transform.position += new Vector3(x * speed , 0, 0) * Time.deltaTime;
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        if (characterController.isGrounded)
-        {
-            vSpeed = 0;
-            //If jumping will be added, add here with an if statement on getaxis
-        }
-
-        vSpeed -= gravity;
-        move.y = vSpeed;
-        characterController.Move(move * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown("escape"))
-        {
-            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("Missing Joystick or Charactercontroller");
         }
     }
 }

@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: {fileID: 11400000, guid: 955cc21bc92640e43a71d262d6fba34a, type: 2}
-  player: {fileID: 11400000, guid: 0f440f40597251849a5283ee1117f741, type: 2}
+  player: {fileID: 11400000, guid: 63757d4cc4b6eb342a7b6f956941298d, type: 2}
   userNameText: {fileID: 365967688}
   selector: {fileID: 498006068}
 --- !u!224 &498006067
