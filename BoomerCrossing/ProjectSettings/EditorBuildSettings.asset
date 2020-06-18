@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BeauScene.unity
-    guid: 1a14f0b6178c1d148a38b7eea142a151
+    path: Assets/Scenes/Journey/StartScreen.unity
+    guid: 966cadd10ea004946863aa541e4f848d
+  - enabled: 1
+    path: Assets/Scenes/Journey/SkillSelector.unity
+    guid: de1db1c48f919b843a63d29efd5e7026
+  - enabled: 1
+    path: Assets/Scenes/Journey/Main Menu.unity
+    guid: b83bc7a291b62d7438f246e141ce3c92
   m_configObjects: {}
