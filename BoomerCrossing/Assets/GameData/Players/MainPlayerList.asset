@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MainPlayerList
   m_EditorClassIdentifier: 
   players: []
+  CurrentLoggedInPlayer: {fileID: 0}

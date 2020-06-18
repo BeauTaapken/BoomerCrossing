@@ -15,19 +15,25 @@ public class LoginManager : MonoBehaviour
 
     public SceneSelector selector;
 
-    private void Start()
+    #region reset_on_unity_editor
+#if UNITY_EDITOR
+    private void OnEnable()
     {
-        if(playerList.players.Count > 0)
-        {
-            if (playerList.players[0] == null)
-            {
-                playerList.players.Clear();
-            }
-        }
-      
-
-        player = Instantiate(player);
+        UnityEditor.EditorApplication.playModeStateChanged += EditorApplication_playModeStateChanged;
     }
+
+    private void OnDisable()
+    {
+        UnityEditor.EditorApplication.playModeStateChanged -= EditorApplication_playModeStateChanged;
+    }
+
+    private void EditorApplication_playModeStateChanged(UnityEditor.PlayModeStateChange state)
+    {
+        playerList.players.Clear();
+    }
+#endif
+    #endregion
+    
 
     public void login()
     {
@@ -37,12 +43,13 @@ public class LoginManager : MonoBehaviour
 
         if (currentPlayer != null)
         {
-            Debug.Log(currentPlayer.Skill);
+            Debug.Log(currentPlayer.name + " " + currentPlayer.Skill);
             playerList.CurrentLoggedInPlayer = currentPlayer;
             selector.MainMenu();
         }
         else
         {
+            player = Instantiate(player);
             player.Name = Name;
             playerList.CurrentLoggedInPlayer = player;
             playerList.players.Add(Instantiate(player));
