@@ -8,6 +8,7 @@ public class UISelector : MonoBehaviour
     public GameObject ZoomerUI;
     public PlayerList playerList;
     public JoystickMovement JoystickMovement;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class UISelector : MonoBehaviour
             BoomerUI.SetActive(true);
             Debug.Log("OK boomer");
             //TODO setup boomer controls
+            player.GetComponent<JoystickMovement>().enabled = false;
         }
         else if (playerList.CurrentLoggedInPlayer.Skill == PlayerSkill.EXPERIENCED)
         {
