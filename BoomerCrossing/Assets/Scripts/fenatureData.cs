@@ -13,7 +13,7 @@ public class fenatureData : MonoBehaviour
     public void rotateRight()
     {
         spriteIndex++;
-        if (spriteIndex > sprites.Count)
+        if (spriteIndex > sprites.Count-1)
         {
             spriteIndex = 0;
         }
@@ -26,9 +26,13 @@ public class fenatureData : MonoBehaviour
         spriteIndex--;
         if (spriteIndex < 0)
         {
-            spriteIndex = sprites.Count;
+            spriteIndex = sprites.Count-1;
         }
 
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites[spriteIndex];
+    }
+    public void Destroy()
+    {
+        Object.Destroy(this.gameObject);
     }
 }
