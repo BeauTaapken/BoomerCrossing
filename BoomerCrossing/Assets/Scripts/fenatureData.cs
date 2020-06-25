@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class fenatureData : MonoBehaviour
 {
     public List<Sprite> sprites;
-    public Image image; 
+    public Sprite image; 
 
     private int spriteIndex = 0;
 
