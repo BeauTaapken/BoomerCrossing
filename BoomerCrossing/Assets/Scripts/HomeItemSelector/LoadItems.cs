@@ -24,6 +24,8 @@ public class LoadItems : MonoBehaviour
                 fenatureData furnitureData = item.GetComponent<fenatureData>();
                 if (furnitureData != null)
                 {
+                    GameObject itemInstantiate = Instantiate(item, instantiatedItem.gameObject.transform.GetChild(0));
+                    itemInstantiate.gameObject.SetActive(false);
                     instantiatedItem.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = furnitureData.image;
                 }
                 instantiatedItem.transform.SetParent(ContentLocation.transform, false);
