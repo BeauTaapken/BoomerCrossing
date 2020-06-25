@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbf7736c40ba2645a2cb0e55dd695c9, type: 3}
+  m_Name: RoomGrid
+  m_EditorClassIdentifier: 
+  redSphere: {fileID: 3337335895346442535, guid: 4157c765d1309a041b7a458cda7ca959,
+    type: 3}
+  greenSphere: {fileID: 3337335895346442535, guid: 2f08afe89e422be4d8609c7b067a643e,
+    type: 3}
+  GridSizeY: 3
+  GridSizeX: 7
+  ColSizeX: 1.45
+  RowSizeY: 1.5
+  OffsetX: -5
+  OffsetY: 0.5
