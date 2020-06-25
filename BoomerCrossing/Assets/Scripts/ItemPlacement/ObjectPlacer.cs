@@ -32,6 +32,7 @@ public class ObjectPlacer : MonoBehaviour
                 {
                     GameObject placedObject = Instantiate(selectedObject);
                     placedObject.transform.position = col.centerPoint;
+                    col.objectInCol = placedObject;
                 }
             }
         }
